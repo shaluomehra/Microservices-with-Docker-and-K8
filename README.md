@@ -60,33 +60,12 @@ Commercial support is available at
 </html>
 ```
 
-Create a default file called `index.html`
-
-```
-server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    
-    root /usr/share/nginx/html;
-    index index.html index.htm;
-
-    server_name _;
-    location / {
-        try_files $uri $uri/ =404;
-    }
-}
-```
 Create another file in the directory and call it `Dockerfile` <br>
 
 In your Dockerfile enter the following:
 ```
-FROM ubuntu:18.04  
-LABEL maintainer="shaluomehra@outlook.com" 
-RUN  apt-get -y update && apt-get -y install nginx
-COPY files/default /etc/nginx/sites-available/default
-COPY files/index.html /usr/share/nginx/html/index.html
-EXPOSE 80
-CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+FROM nginx
+COPY index.html /usr/share/nginx/html
 ```
 
 ## Build your image
