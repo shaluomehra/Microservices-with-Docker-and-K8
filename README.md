@@ -110,7 +110,7 @@ Create a tag
 `docker tag tech254-shaluo-nginx:v1 shaluomehra/tech254-nginx:v1`
 
 Push your image to DockerHub
-
+ss
 `docker push shaluomehra/tech254-nginx:v1`
 
 
