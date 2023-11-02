@@ -92,6 +92,8 @@ Push your image to DockerHub
 ss
 `docker push shaluomehra/tech254-nginx:v1`
 
+![Screenshot 2023-11-02 101209.png](images%2FScreenshot%202023-11-02%20101209.png)
+
 # Why use K8 (Kubernetes)?
 
 Kubernetes (often abbreviated as K8s) is a powerful container orchestration platform
