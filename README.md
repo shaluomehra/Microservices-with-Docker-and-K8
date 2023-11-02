@@ -92,6 +92,25 @@ Push your image to DockerHub
 ss
 `docker push shaluomehra/tech254-nginx:v1`
 
+# Why use K8 (Kubernetes)?
+
+Kubernetes (often abbreviated as K8s) is a powerful container orchestration platform
+
+## Benefits of K8:
+- **Scalability**: Easily scale applications up or down based on demand
+- **High Availability**: Ensures that applications are always available and can recover from failures
+- **Load Balancing**: Distributes traffic to ensure optimal resource usage and prevent overloads
+- **Automated Rollouts & Rollbacks**: Safely deploy new versions and roll back if issues arise
+- **Self-Healing**: Automatically replaces failed containers and reschedules containers when nodes die
+
+## When would you not use K8?
+- **Simple Applications**: Overhead might not be justified for small, simple projects
+- **Limited Resources**: Requires a learning curve and can be resource-intensive for smaller teams
+- **Short-Term Projects**: Might be overkill for temporary or experimental projects
+- **Local Development**: For local dev environments, simpler tools might be more appropriate
+- **Specific Platform Dependencies**: If you're tied to a particular platform that doesn't support Kubernetes or integrates better with other tools
+
+
 
 
 
