@@ -7,23 +7,43 @@ Create a YAML file for deployment
 Call it `sparta-deploy.yml`
 
 ```yaml
+# The API version used to create the object
 apiVersion: apps/v1
+
+# The type of object we want to create
 kind: Deployment
+
+# Metadata about the object like its name
 metadata:
   name: node-app-deployment
+
+# Specification details of the object
 spec:
+  
+  # Number of pod replicas
   replicas: 2  # Adjust the number of replicas based on your computer's capacity
+  
+  # Label selector for pods. Existing ReplicaSets whose pods are selected by this will be scaled down.
   selector:
     matchLabels:
       app: node-app
+
+  # Template for the pod's contents
   template:
+    # Metadata to label the pod
     metadata:
       labels:
         app: node-app
+
+    # Details of the pod's contents
     spec:
       containers:
-        - name: node-app
-          image: shaluomehra/sparta-app  # Replace with your Node.js app image
+        - name: node-app  # Name of the container
+        
+          # Image of the container to be used
+          image: shaluomehra/sparta-app  # your sparta app image
+
+          # Ports exposed by this container
           ports:
             - containerPort: 3000  # Adjust if your app listens on a different port
 ```
@@ -63,7 +83,7 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3000
-      nodePort: 30100
+      nodePort: 30100 # Between 30000 - 32767
 ```
 ### Step 3b: You can also use a Load Balancer
 
