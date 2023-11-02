@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app-deployment
+spec:
+  replicas: 2  # Adjust the number of replicas based on your computer's capacity
+  selector:
+    matchLabels:
+      app: node-app
+  template:
+    metadata:
+      labels:
+        app: node-app
+    spec:
+      containers:
+        - name: node-app
+          image: shaluomehra/sparta-app  # Replace with your Node.js app image
+          ports:
+            - containerPort: 3000  # Adjust if your app listens on a different port
