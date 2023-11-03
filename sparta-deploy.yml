@@ -17,3 +17,10 @@ spec:
           image: shaluomehra/sparta-app  # Replace with your Node.js app image
           ports:
             - containerPort: 3000  # Adjust if your app listens on a different port
+          env: 
+            - name: DB_HOST
+              value: mongodb://10.97.103.51:27017/posts
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/sh","-c", node seeds/seed.js]
